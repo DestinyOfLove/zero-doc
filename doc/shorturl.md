@@ -327,7 +327,7 @@ ip 结果不一样。
   ```go
   type Config struct {
     rest.RestConf
-    Transform zrpc.RpcClientConf     // 手动代码
+    Transformer zrpc.RpcClientConf     // 手动代码
   }
   ```
 
