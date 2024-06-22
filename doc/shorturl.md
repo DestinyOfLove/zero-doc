@@ -352,7 +352,7 @@ ip 结果不一样。
 * 修改 `shorturl/api/internal/logic/expandlogic.go` 里的 `Expand` 方法，如下：
 
   ```go
-  func (l *ExpandLogic) Expand(req types.ExpandReq) (types.ExpandResp, error) {
+  func (l *ExpandLogic) Expand(req types.ExpandReq) (*types.ExpandResp, error) {
     // 手动代码开始 
     rpcResp, err := l.svcCtx.Transformer.Expand(l.ctx, &transformer.ExpandReq{
         Shorten: req.Shorten,
@@ -373,7 +373,7 @@ ip 结果不一样。
 * 修改 `shorturl/api/internal/logic/shortenlogic.go`，如下：
 
   ```go
-  func (l *ShortenLogic) Shorten(req types.ShortenReq) (types.ShortenResp, error) {
+  func (l *ShortenLogic) Shorten(req types.ShortenReq) (*types.ShortenResp, error) {
     // 手动代码开始
     rpcResp, err := l.svcCtx.Transformer.Shorten(l.ctx, &transformer.ShortenReq{
         Url: req.Url,
