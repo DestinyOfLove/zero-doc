@@ -296,7 +296,7 @@
   可以通过命令生成proto文件模板
 
   ```shell
-  goctl rpc template -o check.proto
+  goctl rpc -o check.proto
   ```
 
   修改后文件内容如下：
